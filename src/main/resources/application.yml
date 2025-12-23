@@ -6,6 +6,15 @@ spring:
     mongodb:
       uri: mongodb://localhost:27017/urlshortener
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  metrics:
+    tags:
+      application: url-shortener
+
 app:
   redis:
     host: localhost
